@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Breast Cancer Predictor</title>
+</head>
+<body>
+    <h2>Breast Cancer Prediction (Wisconsin Dataset)</h2>
+
+    <form action="/predict" method="POST">
+        {% for i in range(30) %}
+            <label>{{ i+1 }}. {{ i }}</label>
+            <input type="text" name="f{{i}}" required><br><br>
+        {% endfor %}
+        <button type="submit">Predict</button>
+    </form>
+
+    <h3>{{ prediction_text }}</h3>
+</body>
+</html>
